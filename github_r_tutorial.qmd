@@ -71,7 +71,7 @@ GitHub é uma **plataforma online** que guarda seus projetos Git e permite que v
     git config --global user.name "Seu Nome"
     git config --global user.email "email@example.com"
     ```
-7. Depois, crie um projeto com controle de versão no RStudio .
+7. Depois,,crie um projeto com controle de versão no RStudio .
 8. Abrirá um novo terminal integrado do RStudio (`Tools > Terminal > New Terminal`), no qual ficarão visiveis dois elemento visuais: o menu suspenso "Git/Controle" de versão e a guia "Git/Controle de versão".
 
 ![Elementos visuais relacionados ao Git](https://docs.posit.co/ide/user/ide/guide/tools/images/rstudio-vcs-pane-labeled.png){fig-align="center"}
