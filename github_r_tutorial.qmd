@@ -1,0 +1,169 @@
+---
+title: "Usando GitHub com R e RStudio"
+description: "Aprenda a integrar GitHub e RStudio para versionamento de projetos de análise de dados."
+author:
+  - name: Alessandra Menezes
+    email: aasmenezes@unifesp.br
+    affiliations:
+      - name: Universidade Federal de São Paulo (UNIFESP) 
+        url: https://unifesp.br/
+date: today
+lang: pt
+toc: true
+toc-location: left
+toc-title: Conteúdo
+number-sections: false
+highlight-style: pygments
+format: 
+  html:
+    code-fold: true
+    code-tools: true
+    code-link: true
+    df-print: kable
+    embed-resources: true
+    include-in-header: "include/open_links.html"
+theme:
+  light: flatly
+  dark: darkly
+---
+
+# 🚀 Introdução
+
+Bem-vindo! Este tutorial foi feito para quem **nunca usou Git ou GitHub**, especialmente no contexto de **ciência de dados com R**. 
+
+# 🎯 O que você vai aprender
+
+-   O que são Git e GitHub e por que usá-los;
+-   Como instalar e configurar o ambiente de trabalho no RStudio;
+-   Como criar projetos no GitHub e no RStudio;
+-   Como salvar e compartilhar seu trabalho usando versionamento.
+
+------------------------------------------------------------------------
+
+# 🧠 Entendendo o Git e o GitHub
+
+## 📦 O que é Git?
+
+Git é como uma **máquina do tempo** para o seu projeto. Ele salva versões do seu código, permitindo que você volte atrás, colabore e mantenha tudo organizado.
+
+![Git logo](https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png){fig-align="center" width="120"}
+
+## ☁️ O que é GitHub?
+
+GitHub é uma **plataforma online** que guarda seus projetos Git e permite que você trabalhe com outras pessoas.
+
+![GitHub logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png){fig-align="center" width="120"}
+
+------------------------------------------------------------------------
+
+# 🧰 Configurando o ambiente
+
+1. Faça o [download conforme seu sistema operacional](https://git-scm.com/downloads) e siga as [instruções de instalação](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+2. Depois, vá até o menu: `Tools > Global Options > Git/SVN`.
+3. Se o campo **Git executable** estiver vazio ou com erro, será necessário configurar o caminho do executável do Git.
+4. Localize o caminho correto e preencha o campo **Git executable**:
+    - **Windows:** `C:/Program Files/Git/bin/git.exe`; ou
+    - **MacOS/Linux:** `/usr/bin/git` (em geral).
+5.  Clique em **OK** para salvar as configurações.
+6.  Abra o terminal do RStudio e configure seu nome e email do Git:
+
+    ``` bash
+    git config --global user.name "Seu Nome"
+    git config --global user.email "email@example.com"
+    ```
+7. Depois, crie um projeto com controle de versão no RStudio .
+8. Abrirá um novo terminal integrado do RStudio (`Tools > Terminal > New Terminal`), no qual ficarão visiveis dois elemento visuais: o menu suspenso "Git/Controle" de versão e a guia "Git/Controle de versão".
+
+![Elementos visuais relacionados ao Git](https://docs.posit.co/ide/user/ide/guide/tools/images/rstudio-vcs-pane-labeled.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+# 📘 Conceitos fundamentais
+
+1.  **Repositório**: pasta do projeto com controle de versão. Pode ser local (no seu computador) ou remoto (no GitHub).
+2.  **Clone**: copiar um repositório do GitHub para a pasta de trabalho local
+   no RStudio. Isso cria uma cópia local do repositório remoto.
+3.  **Fork**: criar uma cópia de um repositório para a sua conta, sem modificar o original.
+   Útil para contribuir com projetos de outras pessoas, pois permite criar pull requests para sugerir mudanças ao original.
+4.  **Commit**: um registro de alterações. É como tirar uma foto do estado atual do projeto. Cada commit deve ter uma mensagem descritiva.
+5.  **Push**: enviar alterações para o GitHub a partir do RStudio. Isso atualiza o repositório remoto com as alterações feitas localmente.
+6.  **Pull**: baixar alterações do GitHub para o RStudio. Isso atualiza o repositório local com as alterações feitas remotamente.
+
+![Fluxo de trabalho entre GitHub e projeto local no RStudio](figuras/fluxograma.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+# 🔗 Conectando o GitHub ao RStudio
+
+## No GitHub
+
+1. Crie um novo repositório e dê um nome significativo, que identifique a natureza do projeto.
+2. Marque a opção "Add a README". Isso cria um arquivo README.md para descrever o projeto.
+3. Escolha a licença (opcional, mas recomendado).
+4. Clique em "Create repository".
+
+## No RStudio
+
+1. Crie um novo projeto de controle de versão: `File > New Project > Version Control > Git`.
+2. Cole a URL do repositório criado no GitHub.
+3. Clone o projeto localmente:
+    - Selecione a pasta onde o projeto será salvo.
+    - Marque a opção "Create a git repository".
+4. Escolha o diretório onde o projeto será salvo.
+5. Clique em "Create Project". Isso cria um novo projeto RStudio vinculado ao repositório GitHub.
+
+------------------------------------------------------------------------
+
+# ✍️ Trabalhando com Git no RStudio
+
+1. Trabalhe no projeto, adicionando arquivos, fazendo análises.
+2. Depois vá para a aba "Git". Você verá os arquivos modificados, novos arquivos e arquivos deletados.
+3. Selecione os arquivos que deseja incluir no commit.
+4. Clique em "Commit" para abrir a janela de commit.
+5. Adicione uma mensagem de commit descritiva.
+6. Clique em "Commit" para registrar as alterações localmente.
+7. Para enviar as alterações para o GitHub, clique em "Push".
+8. Para baixar as alterações do GitHub, clique em "Pull".
+
+------------------------------------------------------------------------
+
+# 🧪 Atividade Prática
+
+Você vai clonar o repositório desse tutorial e fazer algumas modificações:
+
+1.  Clone o repositório [tutorial GitHub](https://github.com/AASMenezes/aula_github_basico).
+2.  Crie um arquivo `resumo.R` com o código:
+
+``` r
+summary(iris)
+```
+3.  Salve o arquivo `resumo.R` no diretório do repositório clonado.
+4. Vá para a aba "Git" no RStudio, você verá o arquivo `resumo.R` listado como modificado.
+5. Selecione o arquivo `resumo.R` e clique em "Commit".
+6. Escreva uma mensagem de commit, como "Adiciona resumo da base iris".
+7. Clique em "Commit" para registrar as alterações localmente.
+8. Clique em "Push" para enviar as alterações para o GitHub.
+9. Verifique no GitHub se o arquivo `resumo.R` foi adicionado corretamente.
+
+------------------------------------------------------------------------
+
+# 🧠 Dicas e boas práticas
+
+- Sempre trabalhe em um repositório clonado localmente;
+- Sempre faça commits frequentes e significativos;
+- Use mensagens de commit claras e descritivas;
+- Mantenha o repositório organizado com pastas para scripts, dados e resultados;
+- Sempre faça pull antes de começar a trabalhar para evitar conflitos;
+- Use o arquivo `.gitignore` para excluir arquivos temporários ou desnecessários do controle de versão;
+- Mantenha o README atualizado com informações sobre o projeto, como instalação, uso e contribuições.
+
+------------------------------------------------------------------------
+
+# 📚 Para saber mais!
+
+- 📘 [Happy Git with R](https://happygitwithr.com/)
+- 🧰 [Git Documentation](https://git-scm.com/doc)
+- 📖 [Pro Git](https://git-scm.com/book/en/v2)
+- 📚 [GitHub Guides](https://guides.github.com/)
+- 🧰 [RStudio User Guide - Version Control with Git and GitHub](https://docs.posit.co/ide/user/ide/guide/tools/version-control.html)
+- 📚 [GitHub Education](https://github.com/education)

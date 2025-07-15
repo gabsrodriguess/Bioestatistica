@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/1329664/78b52a3f9f804ffe8fef04a0c94d9d4d
+bundleId: https://api.rpubs.com/api/v1/document/1329664/78b52a3f9f804ffe8fef04a0c94d9d4d
+url: http://rpubs.com/AASMenezes/1329664
+version: 1

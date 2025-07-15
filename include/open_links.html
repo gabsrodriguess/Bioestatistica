@@ -1,0 +1,9 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const anchors = document.querySelectorAll("a[href^='http']");
+    anchors.forEach(anchor => {
+      anchor.setAttribute("target", "_blank");
+      anchor.setAttribute("rel", "noopener noreferrer");
+    });
+  });
+</script>
